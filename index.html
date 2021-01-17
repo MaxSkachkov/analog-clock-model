@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width = device-width, initial-scale = 1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>ANALOG CLOCK</title>
+
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			background: #9ba6bf;
+		}
+
+		.clock {
+			position: relative;
+			width: 350px;
+			height: 350px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: url(clock.png),
+				url(skdz.png), #232a40;
+			background-size: cover;
+			border-radius: 50%;
+		}
+
+		.clock:before {
+			content: '';
+			position: absolute;
+			width: 15px;
+			height: 15px;
+			background-color: #fff;
+			border-radius: 50%;
+			z-index: 999;
+		}
+
+		.minutes {
+			position: absolute;
+			/* Arrow thickness */
+			width: 4px;
+			/* Arrow length */
+			height: 120px;
+			/* Arrow position */
+			left: 49.5%;
+			top: 15%;
+			background: #fff;
+			/* Arrow speed and movement */
+			animation: mn 1600s infinite steps(1600);
+			/* The point about which the arrow rotates */
+			transform-origin: 0 100%;
+		}
+
+		.hours {
+			position: absolute;
+			width: 6px;
+			height: 100px;
+			left: 49%;
+			top: 20%;
+			background: #ffcc00;
+			animation: hr 43200s infinite steps(43200);
+			transform-origin: 0 100%;
+		}
+
+		.seconds {
+			position: absolute;
+			width: 3px;
+			height: 130px;
+			left: 50%;
+			top: 12%;
+			background: red;
+			animation: sc 60s infinite steps(60);
+			transform-origin: 0 100%;
+		}
+
+		@keyframes sc {
+			100% {
+				transform: rotate(360deg);
+				/* The arrow makes a full circle */
+			}
+		}
+
+		@keyframes hr {
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+
+		@keyframes mn {
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+
+	</style>
+</head>
+
+<body>
+
+	<!-- This is a clock-->
+	<div class="clock">
+
+		<!-- This is the hour hand-->
+		<div class="hours"> </div>
+
+		<!-- This is the minute hand-->
+		<div class="minutes"> </div>
+
+		<!-- This is the second hand-->
+		<div class="seconds"> </div>
+
+	</div>
+
+</body>
+
+</html>
